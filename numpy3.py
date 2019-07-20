@@ -23,3 +23,43 @@ swapcased=np.char.swapcase(x)
 titlecased=np.char.title(x)
 print("capitalized:",capitalized,"\nlowered:",lowered,'\nuppered:',uppered,"\nswapcased:",\
     swapcased,"\ntitlecased:",titlecased)
+
+#字符串居中，左，右,大小填充为20
+x=np.array(['hello world','say something'],dtype=str)
+centered=np.char.center(x,20,fillchar="1")
+left=np.char.ljust(x,20,fillchar='2')
+right=np.char.rjust(x,20,fillchar="3")
+print("centered:",centered,"\nleft:",left,"\nright:",right)
+
+#cp500 编码解码
+x=np.array(['hello world','say something'],dtype=str)
+encoded=np.char.encode(x,'cp500')
+decoded=np.char.decode(encoded,'cp500')
+print("encoded:",encoded,"\ndecoded:",decoded)
+
+#通过指定分隔符来连接数组中的元素
+x=np.array(['hello world','say something'],dtype=str)
+out=np.char.join("  ",x)
+print(out)
+
+#移除字符串空格
+x=np.array(['  hello world ',' say something '],dtype=str)
+out1=np.char.strip(x)
+out2=np.char.lstrip(x)
+out3=np.char.rstrip(x)
+print("out1:",out1,"\nout2:",out2,"\nout3:",out3)
+
+#分离字符串字符,按换行符分割
+x=np.array(['hello \nmy name is world'],dtype=str)
+out=np.char.splitlines(x)
+print(out)
+
+#字符填充
+x=np.array(['343'],dtype=str)
+zfill=np.char.zfill(x,7)
+print(zfill)
+
+#字符串替换字符
+x=np.array(['hello my name is ls' ],dtype=str)
+out=np.char.replace(x,"ls","s")
+print(out)
