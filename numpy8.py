@@ -46,4 +46,4 @@ print (np.less(x, y))
 print (np.less_equal(x, y))
 print (np.equal([1, 2], [1, 2.000001]))
 print (np.isclose([1, 2], [1, 2.000001]))
-123
+
